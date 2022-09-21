@@ -116,62 +116,62 @@ The aim is to have each type of information / function isolated on a different p
 The most significant difference between windows and linux/unix file systems is determining where the file system’s root begins. In Windows, the root starts with the drive letter, generally C:, which indicates it starts with the hard disc. However, in Linux, the root of the filesystem does not correlate to a physical device or location; rather, it is a logical position of just “/”, which can be located in any hard disk. Any other directory can also be located (mounted) in a different hard disk, but as a user navigating the file system tree, the physical location of the directory is transparent.
  
 Another thing to remember is that everything in Linux is a file. Alternatively, everything is shown as a file, whereas in Windows it may be displayed as a hard drive. In Windows, for example, the hard drive is commonly represented as C: in the file explorer, and it will even display a small symbol of the hard drive and the amount of space that is being used. In Linux, however, the hard disc is simply represented as /dev/sda, which is really just a directory, which in Linux is really just a file that points to other files.
-- / – this is known as “root”, the logical beginning of the Linux file system structure. Every single file path in Linux begins from root. It contains the entirety of your operating system. A key thing to note is that even when any of the /xxx directories below are stored on different partition, it is still logically located at /xxx as far as Linux is concerned.
-- /boot – this is where all the needed files for Linux to boot are kept. 
-- /home –personal data. The /home/username directory contains the Desktop, Documents, Downloads, Photos, Videos… folders.
-- /root – This is the equivalent to the /home folder specifically for the root user, also called the superuser.
-- /bin –this is where most of your binary files are stored, typically for the Linux terminal commands and core utilities, such as cd (change directory), pwd (print working directory), mv (move), and so on.
-- /sbin – Similar to /bin, except that it’s dedicated to certain commands that can only be run by the root user, or the superuser.
-- /lib – this is the location of libraries. When installing Linux software packages, you’ll notice that additional libraries are frequently downloaded, and they almost always begin with lib-something. These are the files required for your Linux apps to function. These libraries can be shared between different programs.
-- /opt – Optional software for your system that is not already managed by your distro’s package manager.
-- /etc – this is where configuration files are stored. Configurations stored in /etc will typically affect all users on the system; whereas users can also store configuration files under their own /home folders, which will only affect that particular user.
-- /dev – this is where physical devices are mounted, such as your hard drives, USB drives, optical drives, and so on. The system hard drive is typically mounted under /dev/sda, whereas your USB thumb drive might be mounted under /dev/sde. You may also have different partitions on your disk, so you’ll see /dev/sda1, /dev/sda2, and so on. In Windows, when you go to “My Computer” or “Computer” and you can see all of the physical devices and drives connected to your computer, this is the equivalent of /dev in Linux file structure.
-- /media – Another place where external devices such as optical drives and USB drives can be mounted. This varies between different Linux distros.
-- /mnt – This is basically a placeholder folder used for mounting other folders or drives. Typically this is used for Network locations, but you could really use it for anything you want. I used to use it as the mount point for my media server’s hard drive (/mnt/server).
-- /proc – the “processes” folder where a lot of system information is represented as files (remember, everything is a file). It basically provides a way for the Linux kernel (the core of the operating system) to send and receive information from various processes running in the Linux environment.
-- /tmp – This is where temporary files are stored, and they are usually deleted upon shutdown, which saves you from having to manually delete them.
-- /usr – Contains files and utilities that are shared between users.
-- /var – This is where variable data is kept, usually system logs but can also include other types of data as well.
-- /srv – directory contains site-specific data served by your system running Red Hat Enterprise Linux. This directory gives users the location of data files for a particular service, such as FTP, WWW, or CVS. Data that only pertains to a specific user should go in the /home/ directory.
+- **/** – this is known as “root”, the logical beginning of the Linux file system structure. Every single file path in Linux begins from root. It contains the entirety of your operating system. A key thing to note is that even when any of the /xxx directories below are stored on different partition, it is still logically located at /xxx as far as Linux is concerned.
+- **/boot** – this is where all the needed files for Linux to boot are kept. 
+- **/home** –personal data. The /home/username directory contains the Desktop, Documents, Downloads, Photos, Videos… folders.
+- **/root** – This is the equivalent to the /home folder specifically for the root user, also called the superuser.
+- **/bin** –this is where most of your binary files are stored, typically for the Linux terminal commands and core utilities, such as cd (change directory), pwd (print working directory), mv (move), and so on.
+- **/sbin** – Similar to /bin, except that it’s dedicated to certain commands that can only be run by the root user, or the superuser.
+- **/lib** – this is the location of libraries. When installing Linux software packages, you’ll notice that additional libraries are frequently downloaded, and they almost always begin with lib-something. These are the files required for your Linux apps to function. These libraries can be shared between different programs.
+- **/opt** – Optional software for your system that is not already managed by your distro’s package manager.
+- **/etc** – this is where configuration files are stored. Configurations stored in /etc will typically affect all users on the system; whereas users can also store configuration files under their own /home folders, which will only affect that particular user.
+- **/dev** – this is where physical devices are mounted, such as your hard drives, USB drives, optical drives, and so on. The system hard drive is typically mounted under /dev/sda, whereas your USB thumb drive might be mounted under /dev/sde. You may also have different partitions on your disk, so you’ll see /dev/sda1, /dev/sda2, and so on. In Windows, when you go to “My Computer” or “Computer” and you can see all of the physical devices and drives connected to your computer, this is the equivalent of /dev in Linux file structure.
+- **/media** – Another place where external devices such as optical drives and USB drives can be mounted. This varies between different Linux distros.
+- **/mnt** – This is basically a placeholder folder used for mounting other folders or drives. Typically this is used for Network locations, but you could really use it for anything you want. I used to use it as the mount point for my media server’s hard drive (/mnt/server).
+- **/proc** – the “processes” folder where a lot of system information is represented as files (remember, everything is a file). It basically provides a way for the Linux kernel (the core of the operating system) to send and receive information from various processes running in the Linux environment.
+- **/tmp** – This is where temporary files are stored, and they are usually deleted upon shutdown, which saves you from having to manually delete them.
+- **/usr** – Contains files and utilities that are shared between users.
+- **/var** – This is where variable data is kept, usually system logs but can also include other types of data as well.
+- **/srv** – directory contains site-specific data served by your system running Red Hat Enterprise Linux. This directory gives users the location of data files for a particular service, such as FTP, WWW, or CVS. Data that only pertains to a specific user should go in the /home/ directory.
 #### What is LVM ?
 The Logical Volume Manager (LVM for short) is a flexible and dynamic management system for Linux hard disk memory. It allows us to have as many partitions as necessary, and to resize, move and even freeze them, without having to restart the machine. This “virtual partitioning” system is very useful on a server, which must preserve stability and rapid management of its memory resources.
 
 With LVM, a physical partition is assigned to a logical volume group and is then “partitioned” into several logical volumes. An additional partition will automatically be created when we define an LVM partition. It is an extended partition which serves only as a container for the logical volumes and doesn’t contain any other data.
 #### File Systems
-- Ext, Ext2, Ext3 and Ext4 file system: The file system Ext stands for Extended File System. It was primarily developed for MINIX OS. The Ext file system is an older version, and is no longer used due to some limitations. Ext2 is the first Linux file system that allows managing two terabytes of data. Ext3 is developed through Ext2; it is an upgraded version of Ext2 and contains backward compatibility. The major drawback of Ext3 is that it does not support servers because this file system does not support file recovery and disk snapshot. Ext4 file system is the faster file system among all the Ext file systems. It is a very compatible option for the SSD (solid-state drive) disks, and it is the default file system in Linux distribution.
-- Btrfs stands for the B tree file system. It is used for fault tolerance, repair system, fun administration, extensive storage configuration, and more. It is not a good suit for the production system.
+- **Ext, Ext2, Ext3 and Ext4 file system**: The file system Ext stands for Extended File System. It was primarily developed for MINIX OS. The Ext file system is an older version, and is no longer used due to some limitations. Ext2 is the first Linux file system that allows managing two terabytes of data. Ext3 is developed through Ext2; it is an upgraded version of Ext2 and contains backward compatibility. The major drawback of Ext3 is that it does not support servers because this file system does not support file recovery and disk snapshot. Ext4 file system is the faster file system among all the Ext file systems. It is a very compatible option for the SSD (solid-state drive) disks, and it is the default file system in Linux distribution.
+- **Btrfs** stands for the B tree file system. It is used for fault tolerance, repair system, fun administration, extensive storage configuration, and more. It is not a good suit for the production system.
 - The swap file system is used for memory paging in Linux operating system during the system hibernation. A system that never goes in hibernate state is required to have swap space equal to its RAM size.
 #### Step by step process
-- The bonus partition table will be followed.
+- The **bonus partition table** will be followed.
  
-- Select Manual
+- Select **Manual**
 - Choose the hard disk (SCSI1) 
-- Create new partition table
-- Choose free space
+- Create **new** partition table
+- Choose **free space**
 	- Create new partition
 		- Define Size (500MB)
 			- Partition type: Primary
 				- Locate the partition at the beginning of the drive
 					- Mount point: /boot
-- Choose free space
+- Choose **free space**
 	- Create new partition
 		- Define Size (max)
 			- Partition type: logic
 					- Mount point: DO NOT MOUNT
-- Select Configure Encrypted Volumes
+- Select **Configure Encrypted Volumes**
 	- Save changes: YES
 		- Select sda5 (using space bar to actually “select” the partition)
-- Select Finish / Select Done / Wait for the encryption to take place
+- Select **Finish** / Select **Done** / Wait for the encryption to take place
 - Enter encryption password (twice)
-- Select Configure LVM
-	- Save changes: YES
-		- Create volume group
-			- Introduce group name: LVMGroup
+- Select **Configure LVM**
+	- Save changes: **YES**
+		- Create **volume group**
+			- Introduce group name: **LVMGroup**
 				- Select /dev/mapper/sda5_crypt
 					- Create logic volume
 - Create volumes:
 
-sda5_crypt		30G
+**sda5_crypt 30G:**
 
       LVMGroup-root	10G
 
@@ -213,7 +213,7 @@ apt upgrade
 ```
 - Reboot
 ```console
-	Reboot
+Reboot
 ```
 
  
@@ -236,11 +236,11 @@ sudo useradd **username**
 ```
 - Check that the user is in the sudo group:
 ```console
-	getent group sudo
+getent group sudo
 ```
 - Reboot
 ```console
-	reboot
+reboot
 ```
 
 ### Configure sudo
@@ -248,7 +248,7 @@ sudo useradd **username**
 - Login as “**username**”
 - Create a sudo configuration file:
 ```console
-	sudo nano /etc/sudoers.d/sudoconfig
+sudo nano /etc/sudoers.d/sudoconfig
 ```
 
 - Edit the document with the following content:
@@ -266,20 +266,21 @@ Defaults	secure_path="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/b
 ### Install and configure SSH
 - Install openssh server:
 ```console
-	sudo apt install openssh-server 
+sudo apt install openssh-server 
 ```
 - Edit ssh config file:
 ```console
-	sudo nano /etc/ssh/sshd_config
-	- “# Port 22”  “Port 4242” (uncomment and change port)
-	- “# PermitRootLogin prohibit-password”  “PermitRootLogin no”
+sudo nano /etc/ssh/sshd_config
+```
+	- “# Port 22” to “Port 4242” (uncomment and change port)
+	- “# PermitRootLogin prohibit-password” to “PermitRootLogin no”
 - Reboot
 ```console
-	sudo reboot
+sudo reboot
 ```
 - Check status (focus on port 4242):
 ```console
-	systemctl status ssh
+systemctl status ssh
 ```
 
 ### Install and configure UFW firewall
