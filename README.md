@@ -150,9 +150,10 @@ With LVM, a physical partition is assigned to a logical volume group and is then
 - Choose **free space**
 	- Create new partition
 		- Define Size (500MB)
-			- Partition type: Primary
-				- Locate the partition at the beginning of the drive
-					- Mount point: /boot
+			- Partition type: **Primary**
+				- Locate the partition at the **beginning** of the drive
+					- Mount point: **/boot**
+					- Bootable flag: **on**
 - Choose **free space**
 	- Create new partition
 		- Define Size (max)
@@ -173,19 +174,21 @@ With LVM, a physical partition is assigned to a logical volume group and is then
 
 **sda5_crypt 30G:**
 
-      LVMGroup-root	10G
+      root	10G
 
-      LVMGroup-swap	2.3G
+      swap	2.3G
 
-      LVMGroup-home	5G
+      home	5G
 
-      LVMGroup-var	3G
+      var	3G
 
-      LVMGroup-srv	3G
+      srv	3G
 
-      LVMGroup-tmp	3G
+      tmp	3G
 
-      LVMGroup-var-log	4G	* use var - - log
+      var-log	4G
+      
+- Check volumes
 
 - Configure Volumes:
 	- Ext4 journaling file system (except for SWAP)
