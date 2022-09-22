@@ -389,7 +389,6 @@ Defaults	iolog_dir="/var/log/sudo"
 Defaults	requiretty/
 Defaults	secure_path="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin"
 ```
-
  
 ### Install and configure SSH
 - Install openssh server:
@@ -423,7 +422,8 @@ sudo ufw status
 ```console
 ip a s
 ```
-### Check SSH concetion
+
+### Check SSH conection
 - Go to host mac terminal
 ```console
 ssh isojo-go@ip-address -p 4242
@@ -434,3 +434,95 @@ logout
 exit
 ```
 
+
+---------- HASTA AQUÍ
+
+
+
+
+### Configure users passwords
+- Go to passwords config file
+```console
+sudo nano /etc/login.defs
+```
+- Modify the following parameters:
+	- “PASS_MAX_DAYS 99999” to “PASS_MAX_DAYS 30”
+	- “PASS_MIN_DAYS 0" to “PASS_MIN_DAYS 2”
+	- Keep "PASS_WARN_AGE 7"
+
+- Install password quality management package:
+```console
+sudo apt install libpam-pwquality
+```
+
+- Configure password strength:
+```console
+sudo nano /etc/pam.d/common-password
+```
+	- password requisite pam_pwquality.so retry=3
+	- minlen=10
+	- ucredit=-1 dcredit=-1		# at least 1 upper and digit
+	- maxrepeat=3
+	- reject_username
+	- difok=7
+	- enforce_for_root
+
+## Create new group
+- Create group:
+```console
+sudo addgroup user42
+```
+
+Check the correct creation of the group:.
+```console
+getent group user42
+```
+
+Add user to group:
+```console
+sudo usermod -aG user42 isojo-go
+```
+
+## Create/Delete/Check users
+- Create new user:
+```console
+sudo adduser **username**
+```
+
+- List users:
+```console
+less /etc/passwd
+```
+
+- Delete user:
+```console
+sudo userdel **user_name**
+```
+
+- Check the information of the password of a user:
+```console
+sudo chage -l **username**
+```
+
+## Monitoring Script
+### Cron
+Configuración de un trabajo cron
+Configure cron como root.
+$ sudo crontab -u root -e
+presionamos intro para que lo abra con nano
+Para programar un script de shell para que se ejecute cada 10 minutos, reemplace la siguiente línea
+23 # m h  dom mon dow   command
+m = minutos
+h = horas
+dom = day of month (1 -31)
+mon = month (1 -12)
+dow = day of the week (0sunday - 6 saturday)
+command = comando a ejecutar
+con:sudo
+23 */10 * * * * sh /root/monitoring.sh | wall 
+Página web para calcularlo: https://crontab.guru/#*/10_*_*_*_*
+Ojo! detras del 10, entre los * hay espacios
+wall sirve para enviar por todas las terminales el input que le 
+enviemos
+Verifique los trabajos cron programados de root.
+$ sudo crontab -u root -l
