@@ -179,6 +179,9 @@ With LVM, a physical partition is assigned to a logical volume group and is then
 - The swap file system is used for memory paging in Linux operating system during the system hibernation. A system that never goes in hibernate state is required to have swap space equal to its RAM size.
 #### Step by step process
 The **bonus partition table** will be followed.
+
+<img  width="800" src="https://github.com/ikersojo/02_born2beroot/blob/main/img/bonus_partition_table.png\?raw\=true">
+
 - Select **Manual**
 
 <img  width="800" src="https://github.com/ikersojo/02_born2beroot/blob/main/img/born2beroot_img17.png\?raw\=true">
@@ -210,7 +213,7 @@ The **bonus partition table** will be followed.
 	- Create new partition
 		- Define Size (max)
 			- Partition type: logic
-					- Mount point: DO NOT MOUNT
+				- Mount point: DO NOT MOUNT
 
 <img  width="800" src="https://github.com/ikersojo/02_born2beroot/blob/main/img/born2beroot_img26.png\?raw\=true">
 <img  width="800" src="https://github.com/ikersojo/02_born2beroot/blob/main/img/born2beroot_img27.png\?raw\=true">
