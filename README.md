@@ -99,6 +99,7 @@ VirtualBox will be used to create the virtual machine. Click NEW to start defini
 ### Basic localization and user definition
 - The machine will boot from the .iso disk 
 - Select **Install** to start the Debian installation process.
+  <img  width="400" src="https://github.com/ikersojo/02_born2beroot/blob/main/img/born2beroot_img1.png\?raw\=true">
 - Choose language: **English**.
 - Choose localization:  **other/Europe/Spain**.
 - Choose Keyboard layout: **Spanish (QWERTY)**.
