@@ -183,7 +183,7 @@ The **bonus partition table** will be followed.
 
 <img  width="800" src="https://github.com/ikersojo/02_born2beroot/blob/main/img/born2beroot_img17.png\?raw\=true">
 
-- Choose the hard disk (SCSI1) 
+- Choose the hard disk (sda) 
 
 <img  width="800" src="https://github.com/ikersojo/02_born2beroot/blob/main/img/born2beroot_img18.png\?raw\=true">
 
