@@ -100,16 +100,39 @@ VirtualBox will be used to create the virtual machine. Click NEW to start defini
 - The machine will boot from the .iso disk 
 - Select **Install** to start the Debian installation process.
 
-  <img  width="800" src="https://github.com/ikersojo/02_born2beroot/blob/main/img/born2beroot_img1.png\?raw\=true">
-  
+<img  width="800" src="https://github.com/ikersojo/02_born2beroot/blob/main/img/born2beroot_img1.png\?raw\=true">
+
 - Choose language: **English**.
+
+<img  width="800" src="https://github.com/ikersojo/02_born2beroot/blob/main/img/born2beroot_img2.png\?raw\=true">
+
 - Choose localization:  **other/Europe/Spain**.
+
+<img  width="800" src="https://github.com/ikersojo/02_born2beroot/blob/main/img/born2beroot_img3.png\?raw\=true">
+
 - Choose Keyboard layout: **Spanish (QWERTY)**.
+
+<img  width="800" src="https://github.com/ikersojo/02_born2beroot/blob/main/img/born2beroot_img4.png\?raw\=true">
+
 - Select hostname: **isojo-go42**.
+
+<img  width="800" src="https://github.com/ikersojo/02_born2beroot/blob/main/img/born2beroot_img5.png\?raw\=true">
+
 - Leave the domain name **blank**.
+
+<img  width="800" src="https://github.com/ikersojo/02_born2beroot/blob/main/img/born2beroot_img6.png\?raw\=true">
+
 - Introduce the root password. **Write down this password for the evaluation!**
+
+<img  width="800" src="https://github.com/ikersojo/02_born2beroot/blob/main/img/born2beroot_img7.png\?raw\=true">
+
 - Create the first user, which is the **isojo-go**: first **full name**, then **username** and then **password**. **Write everything down for evaluation!**
+
+<img  width="800" src="https://github.com/ikersojo/02_born2beroot/blob/main/img/born2beroot_img8.png\?raw\=true">
+
 - Select clock
+
+<img  width="800" src="https://github.com/ikersojo/02_born2beroot/blob/main/img/born2beroot_img9.png\?raw\=true">
 
  
 ### Partitions, LVM and Encryption
