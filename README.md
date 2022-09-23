@@ -93,10 +93,9 @@ VirtualBox will be used to create the virtual machine. Click NEW to start defini
 ### Network adapter
 - Attached to: Bridge Adapter
 - Name: en0: Ethernat
-
  
-## Install Debian
-### Basic localization and user definition
+# Install Debian
+## Basic localization and user definition
 - The machine will boot from the .iso disk 
 - Select **Install** to start the Debian installation process.
 
@@ -140,15 +139,15 @@ VirtualBox will be used to create the virtual machine. Click NEW to start defini
 <img  width="800" src="https://github.com/ikersojo/02_born2beroot/blob/main/img/born2beroot_img14.png\?raw\=true">
 <img  width="800" src="https://github.com/ikersojo/02_born2beroot/blob/main/img/born2beroot_img15.png\?raw\=true">
 
-- Select clock
+- Select clock: **Madrid**
 
 <img  width="800" src="https://github.com/ikersojo/02_born2beroot/blob/main/img/born2beroot_img16.png\?raw\=true">
 
  
-### Partitions, LVM and Encryption
-#### Why have different partitions?
+## Partitions, LVM and Encryption
+### Why have different partitions?
 The aim is to have each type of information / function isolated on a different partition to isolate issues and protect the rest of the system. A good practice can be mount each key part of the linux/unix file system structure in a different partition.
-#### File System Structure
+### File System Structure
 The most significant difference between windows and linux/unix file systems is determining where the file system’s root begins. In Windows, the root starts with the drive letter, generally C:, which indicates it starts with the hard disc. However, in Linux, the root of the filesystem does not correlate to a physical device or location; rather, it is a logical position of just “/”, which can be located in any hard disk. Any other directory can also be located (mounted) in a different hard disk, but as a user navigating the file system tree, the physical location of the directory is transparent.
  
 Another thing to remember is that everything in Linux is a file. Alternatively, everything is shown as a file, whereas in Windows it may be displayed as a hard drive. In Windows, for example, the hard drive is commonly represented as C: in the file explorer, and it will even display a small symbol of the hard drive and the amount of space that is being used. In Linux, however, the hard disc is simply represented as /dev/sda, which is really just a directory, which in Linux is really just a file that points to other files.
@@ -169,15 +168,15 @@ Another thing to remember is that everything in Linux is a file. Alternatively, 
 - **/usr** – Contains files and utilities that are shared between users.
 - **/var** – This is where variable data is kept, usually system logs but can also include other types of data as well.
 - **/srv** – directory contains site-specific data served by your system running Red Hat Enterprise Linux. This directory gives users the location of data files for a particular service, such as FTP, WWW, or CVS. Data that only pertains to a specific user should go in the /home/ directory.
-#### What is LVM ?
+### What is LVM ?
 The Logical Volume Manager (LVM for short) is a flexible and dynamic management system for Linux hard disk memory. It allows us to have as many partitions as necessary, and to resize, move and even freeze them, without having to restart the machine. This “virtual partitioning” system is very useful on a server, which must preserve stability and rapid management of its memory resources.
 
 With LVM, a physical partition is assigned to a logical volume group and is then “partitioned” into several logical volumes. An additional partition will automatically be created when we define an LVM partition. It is an extended partition which serves only as a container for the logical volumes and doesn’t contain any other data.
-#### File Systems
+### File Systems
 - **Ext, Ext2, Ext3 and Ext4 file system**: The file system Ext stands for Extended File System. It was primarily developed for MINIX OS. The Ext file system is an older version, and is no longer used due to some limitations. Ext2 is the first Linux file system that allows managing two terabytes of data. Ext3 is developed through Ext2; it is an upgraded version of Ext2 and contains backward compatibility. The major drawback of Ext3 is that it does not support servers because this file system does not support file recovery and disk snapshot. Ext4 file system is the faster file system among all the Ext file systems. It is a very compatible option for the SSD (solid-state drive) disks, and it is the default file system in Linux distribution.
 - **Btrfs** stands for the B tree file system. It is used for fault tolerance, repair system, fun administration, extensive storage configuration, and more. It is not a good suit for the production system.
 - The swap file system is used for memory paging in Linux operating system during the system hibernation. A system that never goes in hibernate state is required to have swap space equal to its RAM size.
-#### Step by step process
+### Step by step process
 The **bonus partition table** will be followed.
 
 <img  width="800" src="https://github.com/ikersojo/02_born2beroot/blob/main/img/bonus_partition_table.png\?raw\=true">
@@ -252,20 +251,13 @@ The **bonus partition table** will be followed.
 
 - Create logic volume
 **sda5_crypt 30G:**
-
-      root	10G
-
-      swap	2.3G
-
-      home	5G
-
-      var	3G
-
-      srv	3G
-
-      tmp	3G
-
-      var-log	4G
+	- root: 10G
+	- swap: 2.3G
+	- home: 5G
+	- var: 3G
+	- srv: 3G
+	- tmp: 3G
+	- var-log: 4G
 
 <img  width="800" src="https://github.com/ikersojo/02_born2beroot/blob/main/img/born2beroot_img43.png\?raw\=true">
 <img  width="800" src="https://github.com/ikersojo/02_born2beroot/blob/main/img/born2beroot_img44.png\?raw\=true">
@@ -345,7 +337,8 @@ apt upgrade
 Reboot
 ```
 
-## Configure the Debian System
+# Configure the Debian System
+## sudo
 ### Install sudo
 The sudo command allows to run programs with the security privileges of another user (by default, as the superuser). It prompts for your user password and confirms the request to execute a command by checking a file, called sudoers, which the system administrator configures.
 - Introduce encryption password
@@ -389,8 +382,9 @@ Defaults	iolog_dir="/var/log/sudo"
 Defaults	requiretty/
 Defaults	secure_path="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin"
 ```
- 
-### Install and configure SSH
+
+## SSH and Firewall
+### Install and configure SSH Server
 - Install openssh server:
 ```console
 sudo apt install openssh-server 
@@ -434,11 +428,43 @@ logout
 exit
 ```
 
+## User Management
+### Create new group
+- Create group:
+```console
+sudo addgroup user42
+```
 
----------- HASTA AQUÍ
+Check the correct creation of the group:.
+```console
+getent group user42
+```
 
+Add user to group:
+```console
+sudo usermod -aG user42 isojo-go
+```
 
+### Create/Delete/Check users
+- Create new user:
+```console
+sudo adduser **username**
+```
 
+- List users:
+```console
+less /etc/passwd
+```
+
+- Delete user:
+```console
+sudo userdel **user_name**
+```
+
+- Check the information of the password of a user:
+```console
+sudo chage -l **username**
+```
 
 ### Configure users passwords
 - Go to passwords config file
@@ -467,62 +493,34 @@ sudo nano /etc/pam.d/common-password
 	- difok=7
 	- enforce_for_root
 
-## Create new group
-- Create group:
-```console
-sudo addgroup user42
-```
+### Change user Password
+TBD...
 
-Check the correct creation of the group:.
-```console
-getent group user42
-```
+# Monitoring Script
+## Script definition
 
-Add user to group:
-```console
-sudo usermod -aG user42 isojo-go
-```
 
-## Create/Delete/Check users
-- Create new user:
+## Cron
+### What is Cron?
+Cron is a utility in a Linux or UNIX-like operating system that allows running commands or scripts on a given schedule without any user intervention. The scheduled commands and scripts are also named as cron jobs. It is mostly used for automating recurring jobs like running scheduled backups, cleaning temporary files, system maintenance, and various other recurring jobs.
+### Configure a Cron job
+Open cron tab as root:
 ```console
-sudo adduser **username**
+sudo crontab -u root -e
 ```
+- Edit the following:
+| m | h | dom | mon | dow | command|
+- m = minutes
+- h = hours
+- dom = day of month (1 -31)
+- mon = month (1 -12)
+- dow = day of the week (0sunday - 6 saturday)
+- command to be executed
 
-- List users:
+- Use https://crontab.guru to derive the *.
+- Use "| wall" to confirm that all terminals display the script.
+
+### Check Cron job
 ```console
-less /etc/passwd
-```
-
-- Delete user:
-```console
-sudo userdel **user_name**
-```
-
-- Check the information of the password of a user:
-```console
-sudo chage -l **username**
-```
-
-## Monitoring Script
-### Cron
-Configuración de un trabajo cron
-Configure cron como root.
-$ sudo crontab -u root -e
-presionamos intro para que lo abra con nano
-Para programar un script de shell para que se ejecute cada 10 minutos, reemplace la siguiente línea
-23 # m h  dom mon dow   command
-m = minutos
-h = horas
-dom = day of month (1 -31)
-mon = month (1 -12)
-dow = day of the week (0sunday - 6 saturday)
-command = comando a ejecutar
-con:sudo
-23 */10 * * * * sh /root/monitoring.sh | wall 
-Página web para calcularlo: https://crontab.guru/#*/10_*_*_*_*
-Ojo! detras del 10, entre los * hay espacios
-wall sirve para enviar por todas las terminales el input que le 
-enviemos
-Verifique los trabajos cron programados de root.
 $ sudo crontab -u root -l
+```
