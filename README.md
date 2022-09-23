@@ -532,19 +532,67 @@ Open cron tab as root:
 ```console
 sudo crontab -u root -e
 ```
-- Edit the following:
-| m | h | dom | mon | dow | command|
-- m = minutes
-- h = hours
-- dom = day of month (1 -31)
-- mon = month (1 -12)
-- dow = day of the week (0sunday - 6 saturday)
-- command to be executed
+- Edit the following: | m | h | dom | mon | dow | command|
+	- m = minutes
+	- h = hours
+	- dom = day of month (1 -31)
+	- mon = month (1 -12)
+	- dow = day of the week (0sunday - 6 saturday)
+	- command to be executed
 
 - Use https://crontab.guru to derive the *.
 - Use "| wall" to confirm that all terminals display the script.
-
 ### Check Cron job
 ```console
 $ sudo crontab -u root -l
 ```
+
+# Setup Linux Lighttpd MariaDB PHP (LLMP)
+## What is LLMP?
+Lighttpd is a  secure, fast and flexibly HTTP server with a small memory footprint compared to other web-servers. Its event-driven architecture is optimized for a large number of parallel connections (keep-alive) which is important for high performance dynamic applications.
+
+WordPress, the most powerful and popular content management systems (CMS) is the right tool to develop and build powerful and dynamic websites based on PHP is flexible and can be run on variety or HTTP servers.
+## Install and configure LLMP
+Install LLMP and allow firewall
+```console
+sudo apt install lighttpd
+sudo ufw allow 80
+sudo ufw status
+```
+Start and enable Lighttpd service to always startup when the server boots up.
+```console
+sudo systemctl start lighttpd.service
+sudo systemctl enable lighttpd.service
+```
+Install MariaDB Database Server
+```console
+sudo apt install mariadb-server mariadb-client
+```
+Start and enable MariaDB service to always start up when the server boots.
+```console
+sudo systemctl start mysql.service
+sudo systemctl enable mysql.service
+```
+Secure MariaDB server
+```console
+sudo mysql_secure_installation
+```
+- Enter current password for root (enter for none): Just press the Enter
+- Set root password? [Y/n]: Y
+- New password: Enter password
+- Re-enter new password: Repeat password
+- Remove anonymous users? [Y/n]: Y
+- Disallow root login remotely? [Y/n]: Y
+- Remove test database and access to it? [Y/n]:  Y
+- Reload privilege tables now? [Y/n]:  Y
+
+Restart MariaDB server
+```console
+sudo systemctl restart mysql.service
+```
+
+Create WordPress Database
+
+
+# Setup File Transfer Protocol (FTP)
+
