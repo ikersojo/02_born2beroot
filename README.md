@@ -395,6 +395,7 @@ sudo nano /etc/ssh/sshd_config
 ```
 	- “# Port 22” to “Port 4242” (uncomment and change port)
 	- “# PermitRootLogin prohibit-password” to “PermitRootLogin no”
+<img  width="800" src="https://github.com/ikersojo/02_born2beroot/blob/main/img/config1.png\?raw\=true">
 - Reboot
 ```console
 sudo reboot
@@ -403,6 +404,7 @@ sudo reboot
 ```console
 systemctl status ssh
 ```
+<img  width="800" src="https://github.com/ikersojo/02_born2beroot/blob/main/img/config2.png\?raw\=true">
 
 ### Install and configure UFW firewall
 - Install openssh server:
@@ -412,16 +414,21 @@ sudo ufw enable
 sudo ufw allow 4242
 sudo ufw status
 ```
+<img  width="800" src="https://github.com/ikersojo/02_born2beroot/blob/main/img/config3.png\?raw\=true">
+
 - Get and write down ip address:
 ```console
 ip a s
 ```
+<img  width="800" src="https://github.com/ikersojo/02_born2beroot/blob/main/img/config4.png\?raw\=true">
 
 ### Check SSH conection
 - Go to host mac terminal
 ```console
 ssh isojo-go@ip-address -p 4242
 ```
+<img  width="800" src="https://github.com/ikersojo/02_born2beroot/blob/main/img/config5.png\?raw\=true">
+
 - If everything is fine, logout and close:
 ```console
 logout
@@ -476,10 +483,13 @@ sudo nano /etc/login.defs
 	- “PASS_MIN_DAYS 0" to “PASS_MIN_DAYS 2”
 	- Keep "PASS_WARN_AGE 7"
 
+<img  width="800" src="https://github.com/ikersojo/02_born2beroot/blob/main/img/config6.png\?raw\=true">
+
 - For the user generated during install, it does not update the password policies. To do so, force manually:
 ```console
 sudo chage -m 2 -M 30 isojo-go
 ``` 
+<img  width="800" src="https://github.com/ikersojo/02_born2beroot/blob/main/img/config9.png\?raw\=true">
 
 - Install password quality management package:
 ```console
