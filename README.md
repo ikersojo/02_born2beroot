@@ -334,7 +334,7 @@ apt upgrade
 ```
 - Reboot
 ```console
-Reboot
+reboot
 ```
 
 # Configure the Debian System
@@ -489,6 +489,7 @@ Append to "password requisite pam_pwquality.so retry=3" line the following:
 ```console
 password        requisite                       pam_pwquality.so retry=3 minlen=10 ucredit=-1 dcredit=-1 repeat=3 reject_username difok=7 enforce_for_root
 ```
+Detail of each flag:
 - minlen=10 (minimum 10 characters of length)
 - ucredit=-1 dcredit=-1	(at least 1 upper and digit)
 - maxrepeat=3 (maximum 3 consecutive identical chararcters)
@@ -498,7 +499,7 @@ password        requisite                       pam_pwquality.so retry=3 minlen=
 
 ### Change user Password
 ```console
-passwd 
+passwd isojo-go
 ```
 
 # Monitoring Script
