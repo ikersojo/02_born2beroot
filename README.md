@@ -67,7 +67,7 @@ chmod 700 isojo-go
 ```
 - We can also create a direct link to the folder using the command:
 ```console
-ln -s /sgoinfre/goinfre/Perso/isojo-go ~/goinfre
+ln -s /sgoinfre/goinfre/Perso/isojo-go ~/goinfrePERSO
 ```
  
 ## Creating the Virtual Machine
@@ -199,7 +199,7 @@ The **bonus partition table** will be followed.
 			- Partition type: **Primary**
 				- Locate the partition at the **beginning** of the drive
 					- Mount point: **/boot**
-					- Bootable flag: **on**
+					- Bootable flag: **on** (this is not mandatory)
 
 <img  width="800" src="https://github.com/ikersojo/02_born2beroot/blob/main/img/born2beroot_img20.png\?raw\=true">
 <img  width="800" src="https://github.com/ikersojo/02_born2beroot/blob/main/img/born2beroot_img21.png\?raw\=true">
