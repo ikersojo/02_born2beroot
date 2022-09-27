@@ -485,13 +485,16 @@ sudo apt install libpam-pwquality
 ```console
 sudo nano /etc/pam.d/common-password
 ```
-	- password requisite pam_pwquality.so retry=3
-	- minlen=10
-	- ucredit=-1 dcredit=-1		# at least 1 upper and digit
-	- maxrepeat=3
-	- reject_username
-	- difok=7
-	- enforce_for_root
+Append to "password requisite pam_pwquality.so retry=3" line the following:
+```console
+password        requisite                       pam_pwquality.so retry=3 minlen=10 ucredit=-1 dcredit=-1 repeat=3 reject_username difok=7 enforce_for_root
+```
+- minlen=10 (minimum 10 characters of length)
+- ucredit=-1 dcredit=-1	(at least 1 upper and digit)
+- maxrepeat=3 (maximum 3 consecutive identical chararcters)
+- reject_username (username cannot be included in the password)
+- difok=7 (at least 7 characters are modified from the previous password)
+- enforce_for_root (root password has the same requirements)
 
 ### Change user Password
 ```console
