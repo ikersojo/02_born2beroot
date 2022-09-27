@@ -58,7 +58,7 @@ mkdir sgoinfre/goinfre/Perso/isojo-go
 ```
 - Check folder permissions (they should be drwxr-xr-x): 
 ```console
-sgoinfre/goinfre/Perso/
+cd sgoinfre/goinfre/Perso/
 ls -lap
 ```
 - Change permissions to drwx------:
