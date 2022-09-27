@@ -476,6 +476,11 @@ sudo nano /etc/login.defs
 	- “PASS_MIN_DAYS 0" to “PASS_MIN_DAYS 2”
 	- Keep "PASS_WARN_AGE 7"
 
+- For the user generated during install, it does not update the password policies. To do so, force manually:
+```console
+sudo chage -m 2 -M 30 isojo-go
+``` 
+
 - Install password quality management package:
 ```console
 sudo apt install libpam-pwquality
