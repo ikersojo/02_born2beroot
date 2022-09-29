@@ -15,3 +15,8 @@ The aim of the project is to create a Linux Server in a Virtual Machine, includi
 
 ## Score
 Pending evaluation...
+
+## DEFENSE
+pass encryption : passWORD1234
+pass root : passWORD1234
+pass user: born2beROOT
