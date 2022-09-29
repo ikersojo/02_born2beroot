@@ -99,10 +99,12 @@ Go to ip adress in a web browser (on host mac):
 ```console
 $ sudo apt install vsftpd
 ```
+
 Allow conxions through port 21:
 ```console
 $ sudo ufw allow 21
 ```
+
 Configure root folder for the user (/home/usuario/ftp):
 ```console
 sudo mkdir /home/usuario/ftp
@@ -110,12 +112,14 @@ sudo mkdir /home/usuario/ftp/files
 sudo chown nobody:nogroup /home/usuario/ftp
 sudo chmod a-w /home/usuario/ftp
 ```
+
 Configure vsftpd:
 ```console
 $ sudo nano /etc/vsftpd.conf
 ```
 - uncomment: #write_enable=YES
 - uncomment: #chroot_local_user=YES
+- 
 Paste at the very end:
 ```console
 user_sub_token=$USER
@@ -124,10 +128,11 @@ userlist_enable=YES
 userlist_file=/etc/vsftpd.userlist
 userlist_deny=NO
 ```
+
 Whitelist FTP:
 ```console
 sudo touch /etc/vsftpd.userlist
-echo <username> | sudo tee -a /etc/vsftpd.userlist
+echo isojo-go | sudo tee -a /etc/vsftpd.userlist
 ```
 
 ##Connect to server using FTP
