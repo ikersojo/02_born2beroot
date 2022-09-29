@@ -20,8 +20,8 @@ Secure MariaDB server
 sudo mysql_secure_installation
 ```
 - Enter current password for root (enter for none): Just press the Enter
-- Set root password? [Y/n]: n
 - Switch to unix_socket authentication [Y/n] n
+- Change root password? [Y/n]: n
 - Remove anonymous users? [Y/n]: Y
 - Disallow root login remotely? [Y/n]: Y
 - Remove test database and access to it? [Y/n]:  Y
@@ -37,9 +37,9 @@ sudo mariadb
 ```
 Create database and user, and grant the user the privileges.
 ```console
-CREATE DATABASE <database-name>
-CREATE USER 'username'@localhost IDENTIFIED BY 'password';
-GRANT ALL privileges ON `database_name`.* TO 'username'@localhost IDENTIFIED BY 'password';
+CREATE DATABASE wordpress_db;
+CREATE USER 'isojo-go'@localhost IDENTIFIED BY 'bor2beROOT';
+GRANT ALL ON wordpress_db.* TO 'isoo-go'@'localhost' IDENTIFIED BY 'born2beROOT' WITH GRANT OPTION;
 FLUSH PRIVILEGES;
 exit
 ```
@@ -57,13 +57,11 @@ sudo apt install php-cgi php-mysql
 ```
 ## Install and configure WordPress
 ```console
-sudo apt install wgetcd
-sudo wget http://wordpress.org/latest.tar.gz -P /var/www/html
-sudo tar -xzvf /var/www/html/latest.tar.gz
-sudo rm /var/www/html/latest.tar.gz
-pwd
-sudo cp -r **(current working direcotry)**/* /var/www/html
-sudo rm -rf **(current working directory)**
+sudo apt install wget
+sudo wget http://wordpress.org/latest.tar.gz
+sudo tar -xzvf latest.tar.gz
+sudo mv wordpress/* /var/www/html/
+sudo rm -rf latest.tar.gz wordpress/
 sudo cp /var/www/html/wp-config-sample.php /var/www/html/wp-config.php
 ```
 Link Wordpress to MariaDB
@@ -71,11 +69,21 @@ Link Wordpress to MariaDB
 sudo nano /var/www/html/wp-config.php
 ```
 Replace:
-- 23 define( 'DB_NAME', 'nombre-base-datos' );
-- 26 define( 'DB_USER', 'nombre-usuario-base-datos' );
-- 29 define( 'DB_PASSWORD', 'password' );
+- define( 'DB_NAME', 'wordpress_db' );
+- define( 'DB_USER', 'isojo-go' );
+- define( 'DB_PASSWORD', 'born2beROOT' );
+- define( 'DB_HOST', 'localhost' );
 
-## Configure Lighttpd
+Change the permissions for the WordPress directories for the www-data user (our web server) and restart lighttpd:
+```console
+sudo chown -R www-data:www-data /var/www/html/
+sudo chmod -R 755 /var/www/html/
+sudo systemctl restart lighttpd
+```
+
+## Activating FastCGI
+FastCGI (Fast Common Gateway Interface) is a binary protocol that allows a web server to interact with external application, in our case, PHP. We need to set up this protocol between lighttpd and PHP in order to be able to access our info.php page from a web browser.FastCGI (Fast Common Gateway Interface) is a binary protocol that allows a web server to interact with external application, in our case, PHP. We need to set up this protocol between lighttpd and PHP in order to be able to access our info.php page from a web browser.
+
 Enable the follwoing modules:
 ```console
 sudo lighty-enable-mod fastcgi
