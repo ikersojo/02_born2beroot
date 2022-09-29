@@ -4,16 +4,18 @@ Show hostname:
 ```console
 hostnamectl status
 ```
+Modify hostname:
 All is included in files.They can be manually modified or using a command.
+- Commnad:
+```console
+sudo hostnamectl set-hostname **new_host_name**
+```
 - Manual mod:
 ```console
 sudo nano /etc/hostname
 sudo nano /etc/hosts
 ```
-- Commnad:
-```console
-sudo hostnamectl set-hostname **new_host_name**
-```
+
 ## AppArmor
 AppArmor is a security program for Linux distributions that allows a system administrator to rescrict a program’s access to the operating system. Each program has an associated profile that controls its ability to access the network, its read, write and execution permissions, among other things. AppArmor came preinstalled in Debian.
 
@@ -78,6 +80,7 @@ sudo nano /etc/ssh/sshd_config
 	- “# Port 22” to “Port 4242” (uncomment and change port)
 	- “# PermitRootLogin prohibit-password” to “PermitRootLogin no”
 <img  width="800" src="https://github.com/ikersojo/02_born2beroot/blob/main/img/config1.png\?raw\=true">
+
 - Reboot
 ```console
 sudo reboot
@@ -87,6 +90,7 @@ sudo reboot
 systemctl status ssh
 ```
 <img  width="800" src="https://github.com/ikersojo/02_born2beroot/blob/main/img/config2.png\?raw\=true">
+
 ### Install and configure UFW firewall
 - Install openssh server:
 ```console
@@ -96,17 +100,21 @@ sudo ufw allow 4242
 sudo ufw status
 ```
 <img  width="800" src="https://github.com/ikersojo/02_born2beroot/blob/main/img/config3.png\?raw\=true">
+
+
 - Get and write down ip address:
 ```console
 ip a s
 ```
 <img  width="800" src="https://github.com/ikersojo/02_born2beroot/blob/main/img/config4.png\?raw\=true">
+
 ### Check SSH conection
 - Go to host mac terminal
 ```console
 ssh isojo-go@ip-address -p 4242
 ```
 <img  width="800" src="https://github.com/ikersojo/02_born2beroot/blob/main/img/config5.png\?raw\=true">
+
 - If everything is fine, logout and close:
 ```console
 logout
@@ -164,6 +172,7 @@ sudo chage -m 2 -M 30 isojo-go
 sudo chage -m 2 -M 30 root
 ``` 
 <img  width="800" src="https://github.com/ikersojo/02_born2beroot/blob/main/img/config9.png\?raw\=true">
+
 - Install password quality management package (PAM (Pluggable Authentication Modules):
 ```console
 sudo apt install libpam-pwquality
