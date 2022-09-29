@@ -137,9 +137,7 @@ echo isojo-go | sudo tee -a /etc/vsftpd.userlist
 
 ## Connect to server using FTP
 Go to the follwoing URL on host mac using a web browser (do not use Safari):
-- ftp://<ip-address>
+- ftp://ip-address:21
 - Open in finder
 - Enter FTP user and password
 End session using CTRL + D.
-	
-To check the ftp server, go to ftp://<ip-address>:21 and enter user and password.
