@@ -90,7 +90,9 @@ sudo lighty-enable-mod fastcgi
 sudo lighty-enable-mod fastcgi-php
 sudo service lighttpd force-reload
 ```
-Go to ip adress in a web browser (on host mac).
+
+## Check Service
+Go to ip adress in a web browser (on host mac): 
 
 # Setup File Transfer Protocol (FTP)
 ## Install FTP
