@@ -35,7 +35,6 @@ VirtualBox will be used to create the virtual machine. Click NEW to start defini
 - Confirm the location of the .vdi file
 - Allocate hard disk space:
 - 30GB as requested by the subject
-- Allocate 16GB of hard disk space (recommended by peers at 42 school); the subject asks for 30GB allocation but is not required (even for the bonus part) and will make the signature creation a very lengthy step.
 ### Installation media
 - Select the virtual machine and go to storage
 - Select the debian installation media (.iso file)

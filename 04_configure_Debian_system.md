@@ -14,12 +14,10 @@ sudo nano /etc/hosts
 ```console
 sudo hostnamectl set-hostname **new_host_name**
 ```
-
 ## AppArmor
 AppArmor is a security program for Linux distributions that allows a system administrator to rescrict a program’s access to the operating system. Each program has an associated profile that controls its ability to access the network, its read, write and execution permissions, among other things. AppArmor came preinstalled in Debian.
 
 AppArmor tends to allow everything and then gradually restrict, whereas SELinux in CentOS starts off by restricting everything, and then loosening up little by little. Other difference: SELinux applies labels to each file, whereas AppArmor monitors software paths.
-
 ### Check AppArmor is running:
 ```console
 sudo aa-status
