@@ -50,23 +50,23 @@ IP_ADDR=$(hostname -I | awk '{print $1}')
 MAC_ADDR=$(ip link show | grep link/ether | awk '{print $2}')
 
 # Number of commands executed with the sudo program:
-SUDO_LOG=$(grep COMMAND /var/log/sudo/sudo.log | wc -l)
+SUDO_LOG=$(cat /var/log/sudo/sudo.log | grep USER | wc -l)
 
 # Print to Screen:
-echo "------------------------------------------------"
-echo "Architecture    : "$ARCH
-echo "Physical CPUs   : "$PCPU
-echo "Virtual CPUs    : "$VCPU
-echo "Memory Usage    : "$RAM_USED/$RAM_TOTAL ($RAM_PERC)
-echo "Disk Usage      : "$DISK_USED/$DISK_TOTAL ($DISK_PERC)
-echo "CPU Load        : "$CPU_LOAD
-echo "Last Boot       : "$LAST_BOOT
-echo "LVM use         : "$LVM
-echo "TCP Connections : "$TCP established
-echo "Users logged    : "$USER_LOG
-echo "Network         : "$IP_ADDR ($MAC_ADDR)
-echo "Sudo            : "$SUDO_LOG commands used
-echo "------------------------------------------------"
+echo "-----------------------------------------------------------"
+echo "  # Architecture    : "$ARCH
+echo "  # Physical CPUs   : "$PCPU
+echo "  # Virtual CPUs    : "$VCPU
+echo "  # Memory Usage    : "$RAM_USED"/"$RAM_TOTAL" ("$RAM_PERC")"
+echo "  # Disk Usage      : "$DISK_USED"/"$DISK_TOTAL" ("$DISK_PERC")"
+echo "  # CPU Load        : "$CPU_LOAD
+echo "  # Last Boot       : "$LAST_BOOT
+echo "  # LVM use         : "$LVM
+echo "  # TCP Connections : "$TCP" established"
+echo "  # Users logged    : "$USER_LOG
+echo "  # Network         : IP "$IP_ADDR" (MAC "$MAC_ADDR")"
+echo "  # Sudo            : "$SUDO_LOG" commands used"
+echo "-----------------------------------------------------------"
 
 ```
 
