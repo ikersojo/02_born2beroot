@@ -7,8 +7,8 @@
 
 # Mandatory Part
 ## Check Delivered work
-- [ ] Ensure that the "signature.txt" file is present at the root of the cloned repository.
-- [ ] Check that the signature contained in "signature.txt" is identical to that of the ".vdi" file of the virtual machine to be evaluated.
+- [x] Ensure that the "signature.txt" file is present at the root of the cloned repository.
+- [x] Check that the signature contained in "signature.txt" is identical to that of the ".vdi" file of the virtual machine to be evaluated.
 - As a precaution, you can **duplicate** the initial virtual machine in order to keep a copy.
 - Then, start the virtual machine to be evaluated.
 
