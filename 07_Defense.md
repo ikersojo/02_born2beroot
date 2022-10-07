@@ -1,149 +1,53 @@
-Introduction
-Please comply with the following rules:
+# Introduction
+- For this project, you have to clone their Git repository on **their station**.
+## Auxialiary Info
+- encryption key: **passWORD123**
+- root password: **born2beROOT**
+- user (password): **isojo-go** (**born2beROOT**)
 
-- Remain polite, courteous, respectful and constructive throughout the
-evaluation process. The well-being of the community depends on it.
+# Mandatory Part
+## Check Delivered work
+[] Ensure that the "signature.txt" file is present at the root of the cloned repository.
+[] Check that the signature contained in "signature.txt" is identical to that of the ".vdi" file of the virtual machine to be evaluated.
+- As a precaution, you can **duplicate** the initial virtual machine in order to keep a copy.
+- Then, start the virtual machine to be evaluated.
 
-- Identify with the student or group whose work is evaluated the possible
-dysfunctions in their project. Take the time to discuss and debate the
-problems that may have been identified.
-
-- You must consider that there might be some differences in how your peers
-might have understood the project's instructions and the scope of its
-functionalities. Always keep an open mind and grade them as honestly as
-possible. The pedagogy is useful only and only if the peer-evaluation is
-done seriously.
-Guidelines
-- Only grade the work that was turned in the Git repository of the evaluated
-student or group.
-
-- Double-check that the Git repository belongs to the student(s). Ensure that
-the project is the one expected. Also, check that "git clone" is used in an
-empty folder.
-
-- Check carefully that no malicious aliases was used to fool you and make you
-evaluate something that is not the content of the official repository.
-
-- To avoid any surprises and if applicable, review together any scripts used
-to facilitate the grading (scripts for testing or automation).
-
-- If you have not completed the assignment you are going to evaluate, you have
-to read the entire subject prior to starting the evaluation process.
-
-- Use the available flags to report an empty repository, a non-functioning
-program, a Norm error, cheating, and so forth.
-In these cases, the evaluation process ends and the final grade is 0,
-or -42 in case of cheating. However, except for cheating, student are
-strongly encouraged to review together the work that was turned in, in order
-to identify any mistakes that shouldn't be repeated in the future.
-Attachments
- subject.pdf
-Preliminaries
-If cheating is suspected, the evaluation stops here. Use the "Cheat" flag to report it. Take this decision calmly, wisely, and please, use this button with caution.
-
-Preliminary tests
-- Defense can only happen if the student being evaluated or group is present.
-This way everybody learns by sharing knowledge with each other.
-- If no work has been submitted (or wrong files, wrong directory, or
-wrong filenames), the grade is 0, and the evaluation process ends.
-- For this project, you have to clone their Git repository on their
-station.
-General instructions
-General instructions
-- During the defense, as soon as you need help to verify a point, the student
-evaluated must help you.
-- Ensure that the "signature.txt" file is present at the root of the cloned
-repository.
-- Check that the signature contained in "signature.txt" is identical
-to that of the ".vdi" file of the virtual machine to be evaluated. A simple
-"diff" should allow you to compare the two signatures. If necessary, ask the
-student being evaluated where their ".vdi" file is located.
-- As a precaution, you can duplicate the initial virtual machine in order
-to keep a copy.
-- Start the virtual machine to be evaluated.
-- If something doesn't work as expected or the two signatures differ,
-the evaluation stops here.
-Mandatory part
-The project consists of creating and configuring a virtual machine following strict rules. The student being evaluated will have to help you during the defense. Make sure that all of the following points are observed.
-
-Project overview
+## Project overview
+- During the defense, a script must display information allevery 10 minutes. Its operation will be checked in detail later.
 - The student being evaluated should explain to you simply:
-- How a virtual machine works.
-- Their choice of operating system.
-- The basic differences between CentOS and Debian.
-- The purpose of virtual machines.
-- If the evaluated student chose CentOS: what SELinux and DNF are.
-- If the evaluated student chose Debian: the difference between
-aptitude and apt, and what APPArmor is.
-During the defense, a script must display information all
-every 10 minutes. Its operation will be checked in detail later.
-If the explanations are not clear, the evaluation stops here.
-Simple setup
-Remember: Whenever you need help checking something, the student being evaluated
-should be able to help you.
-- Ensure that the machine does not have a graphical environment at launch.
-A password will be requested before attempting to connect to this machine.
-Finally, connect with a user with the help of the student being evaluated.
-This user must not be root.
-Pay attention to the password chosen, it must follow the rules imposed in the subject.
-- Check that the UFW service is started with the help of the evaluator.
-- Check that the SSH service is started with the help of the evaluator.
-- Check that the chosen operating system is Debian or CentOS with the help of the evaluator.
-If something does not work as expected or is not clearly explained,
-the evaluation stops here.
-User
+  [] How a virtual machine works.
+  [] Their choice of operating system.
+  [] The basic differences between CentOS and Debian.
+  [] The purpose of virtual machines.
+  [] The difference between aptitude and apt, and what APPArmor is.
 
-Remember: Whenever you need help checking something, the student being evaluated
-should be able to help you.
+## Simple setup
+[] A password (encryption key) will be requested before attempting to connect to this machine.
+[] Ensure that the machine does not have a graphical environment at launch.
+[] Login with a user. This user must not be root.
+[] Check that the UFW service is started with the help of the evaluator.
+[] Check that the SSH service is started with the help of the evaluator.
+[] Check that the chosen operating system is Debian or CentOS with the help of the evaluator.
 
-The subject requests that a user with the login of the student being evaluated is present
-on the virtual machine. Check that it has been added and that it belongs to the
-"sudo" and "user42" groups.
+## User
+[] Check that the user has been added and that it belongs to the "sudo" and "user42" groups.
+[] Create a new user & assign it a password of your choice, respecting the subject rules.
+[] Check the locations of the password rules.
+[] Create a group named "evaluating".
+[] Add the new user to the "evaluating" group.
+[] Ask the student being evaluated to explain the advantages of this password policy, as well as the advantages and disadvantages of its implementation.
+[] Check that the hostname of the machine is correctly formatted as follows: login42 (login of the student being evaluated).
+[] Modify this hostname by replacing the login with yours, then restart the machine.
+[] Compare partitions for the virtual machine. Note: if thestudent evaluated makes the bonuses, it will be necessary to refer to the bonus example.
+[] Ask for explanation of how LVM works and what it is all about.
 
-Make sure the rules imposed in the subject concerning the password policy have been put in place by
-following the following steps.
-
-First, create a new user. Assign it a password of your choice, respecting the subject rules. The
-student being evaluated must now explain to you how they were able to set up the rules requested
-in the subject on their virtual machine.
-Normally there should be one or two modified files. If there is any problem, the evaluation stops here.
-
-- Now that you have a new user, ask the student being evaluated to create a group named "evaluating" in
-front of you and assign it to this user. Finally, check that this user belongs to the "evaluating" group.
-
-- Finally, ask the student being evaluated to explain the advantages of this password policy, as well as the
-advantages and disadvantages of its implementation. Of course, answering that it is because the subject asks
-for it does not count.
-
-If something does not work as expected or is not clearly explained, the evaluation stops here.
-Hostname and partitions
-Remember: Whenever you need help checking something, the student being evaluated
-should be able to help you.
-
-- Check that the hostname of the machine is correctly formatted as follows:
-login42 (login of the student being evaluated).
-- Modify this hostname by replacing the login with yours, then restart the machine.
-If on restart, the hostname has not been updated, the evaluation stops here.
-- You can now restore the machine to the original hostname.
-- Ask the student being evaluated how to view the partitions for this virtual machine.
-- Compare the output with the example given in the subject. Please note: if the
-student evaluated makes the bonuses, it will be necessary to refer to the bonus example.
-
-This part is an opportunity to discuss the scores! The student being evaluated should
-give you a brief explanation of how LVM works and what it is all about.
-If something does not work as expected or is not clearly explained,
-the evaluation stops here.
-SUDO
-Remember: Whenever you need help checking something, the student being evaluated
-should be able to help you.
-
-- Check that the "sudo" program is properly installed on the virtual machine.
-- The student being evaluated should now show assigning your new user to the "sudo" group.
-- The subject imposes strict rules for sudo. The student being evaluated must first explain the
-value and operation of sudo using examples of their choice.
-In a second step, it must show you the implementation of the rules imposed by the subject.
-- Verify that the "/var/log/sudo/" folder exists and has at least one file. Check the contents
-of the files in this folder, You should see a history of the commands used with sudo.
+## SUDO
+[] Check that the "sudo" program is properly installed on the virtual machine.
+[] The student being evaluated should now show assigning your new user to the "sudo" group.
+[] Ask for explanation on the value and operation of sudo using examples of their choice.
+[] Show the implementation of the rules imposed by the subject.
+[] Verify that the "/var/log/sudo/" folder exists and has at least one file. 
+Check the contents of the files in this folder, You should see a history of the commands used with sudo.
 Finally, try to run a command via sudo. See if the file (s) in the "/var/log/sudo/" folder
 have been updated.
 If something does not work as expected or is not clearly explained, the evaluation stops here.
