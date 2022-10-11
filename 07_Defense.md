@@ -14,8 +14,8 @@
 - Then, start the virtual machine to be evaluated.
 
 ## Project overview
-- During the defense, a script must display information allevery 10 minutes. Its operation will be checked in detail later.
-- The student being evaluated should explain to you simply:
+During the defense, a script must display information allevery 10 minutes. Its operation will be checked in detail later.
+The student being evaluated should explain to you simply:
 - [x] How a virtual machine works.
 - [x] Their choice of operating system.
 - [x] The basic differences between CentOS and Debian.
@@ -75,17 +75,6 @@ Ask the user:
 
 
 # Bonus
-Evaluate the bonus part if, and only if, the mandatory part has been entirely and perfectly done, and the error management handles unexpected or bad usage. In case all the mandatory points were not passed during the defense, bonus points must be totally ignored.
-
-Bonus
-Check, with the help of the subject and the student being evaluated, the bonus
-points authorized for this project:
-- Setting up partitions is worth 2 points.
-- Setting up WordPress, only with the services required by the subject,
-is worth 2 points.
-- The free choice service is worth 1 point.
-Verify and test the proper functioning and implementation of each extra
-service.
-For the free choice service, the student being evaluated has to give you a
-simple explanation about how it works and why they think it is useful.
-Please note that NGINX and Apache2 are prohibited.
+- [x] Setting up partitions is worth 2 points.
+- [x] Setting up WordPress, only with the services required by the subject, is worth 2 points.
+- [x] The free choice service is worth 1 point.
