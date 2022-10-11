@@ -12,8 +12,7 @@
 ```console
 shasum xxx.vdi
 ```
-
-img defense 1
+<img  width="800" src="https://github.com/ikersojo/02_born2beroot/blob/main/img/def1.png\?raw\=true">
 
 - As a precaution, you can **duplicate** the initial virtual machine in order to keep a copy.
 - Then, start the virtual machine to be evaluated.
@@ -29,48 +28,45 @@ The student being evaluated should explain to you simply:
 
 ## Simple setup
 - [x] A password (encryption key) will be requested before attempting to connect to this machine.
-
-img
+<img  width="800" src="https://github.com/ikersojo/02_born2beroot/blob/main/img/def2.png\?raw\=true">
 
 - [x] Ensure that the machine does not have a graphical environment at launch.
-
-img
+<img  width="800" src="https://github.com/ikersojo/02_born2beroot/blob/main/img/def3.png\?raw\=true">
 
 - [x] Login with a user. This user must **not** be root.
-
-img
+<img  width="800" src="https://github.com/ikersojo/02_born2beroot/blob/main/img/def4.png\?raw\=true">
 
 - [x] Check that the UFW service is started with the help of the evaluator.
 
 ```console
 sudo ufw status
 ```
-img
+<img  width="800" src="https://github.com/ikersojo/02_born2beroot/blob/main/img/def5.png\?raw\=true">
 
 - [x] Check that the SSH service is started with the help of the evaluator.
 ```console
 sudo systemctl status sshd
 ```
-img
+<img  width="800" src="https://github.com/ikersojo/02_born2beroot/blob/main/img/def6.png\?raw\=true">
 
 - [x] Check that the chosen operating system is Debian or CentOS with the help of the evaluator.
 ```console
 sudo uname -a
 ```
-img
+<img  width="800" src="https://github.com/ikersojo/02_born2beroot/blob/main/img/def7.png\?raw\=true">
 
 ## User
 - [x] Check that the user has been added and that it belongs to the "sudo" and "user42" groups.
 ```console
 groups isojo-go
 ```
-img
+<img  width="800" src="https://github.com/ikersojo/02_born2beroot/blob/main/img/def8.png\?raw\=true">
 
 - [x] Create a new user & assign it a password of your choice, respecting the subject rules.
 ```console
 sudo useradd **testuser**
 ```
-img
+<img  width="800" src="https://github.com/ikersojo/02_born2beroot/blob/main/img/def9.png\?raw\=true">
 
 - [x] Check the locations of the password rules.
 
@@ -81,13 +77,13 @@ img
 ```console
 sudo groupadd **testgroup**
 ```
-img
+<img  width="800" src="https://github.com/ikersojo/02_born2beroot/blob/main/img/def10.png\?raw\=true">
 
 - [x] Add the new user to the "evaluating" group.
 ```console
 sudo usermod -aG testgroup testuser
 ```
-img
+<img  width="800" src="https://github.com/ikersojo/02_born2beroot/blob/main/img/def11.png\?raw\=true">
 
 - [x] Ask the student being evaluated to explain the advantages of this password policy, as well as the advantages and disadvantages of its implementation.
 - [x] Check that the hostname of the machine is correctly formatted as follows: login42 (login of the student being evaluated).
@@ -102,7 +98,7 @@ sudo hostnamectl set-hostname testuser
 - [ ] ```console
 lsblk
 ```
-img
+<img  width="800" src="https://github.com/ikersojo/02_born2beroot/blob/main/img/def12.png\?raw\=true">
 
 - [x] Ask for explanation of how LVM works and what it is all about.
 
@@ -121,13 +117,13 @@ sudo usermod -aG sudo testuser
 ```console
 sudo ls -lap /var/log/sudo
 ```
-img
+<img  width="800" src="https://github.com/ikersojo/02_born2beroot/blob/main/img/def13.png\?raw\=true">
 
 - [x] Check the contents of the files in this folder, You should see a history of the commands used with sudo.
 ```console
 sudo nano /var/log/sudo/sudo.log
 ```
-img
+<img  width="800" src="https://github.com/ikersojo/02_born2beroot/blob/main/img/def14.png\?raw\=true">
 
 ## UFW
 - [x] Check that the "UFW" program is properly installed on the virtual machine.
@@ -137,19 +133,21 @@ img
 ```console
 sudo ufw status
 ```
-img
+<img  width="800" src="https://github.com/ikersojo/02_born2beroot/blob/main/img/def15.png\?raw\=true">
+
 - [x] Add a new rule to open port 8080. Check that this one has been added by listing the active rules.
 ```console
 sudo ufw allow 8080
 sudo ufw status
 ```
-img
+<img  width="800" src="https://github.com/ikersojo/02_born2beroot/blob/main/img/def16.png\?raw\=true">
+
 - [x] Delete this new rule with the help of the student being evaluated.
 ```console
 sudo ufw status numbered
 sudo ufw delete 4
 ```
-img
+<img  width="800" src="https://github.com/ikersojo/02_born2beroot/blob/main/img/def17.png\?raw\=true">
 
 ## SSH
 - [x] Check that the SSH service is properly installed on the virtual machine.
@@ -160,7 +158,7 @@ img
 - [x] Make sure that you cannot use SSH with the "root" user as stated in the subject.
 
 ## Script monitoring
-img
+<img  width="800" src="https://github.com/ikersojo/02_born2beroot/blob/main/img/def18.png\?raw\=true">
 - [x] How their script works by showing you the code.
 - [x] What "cron" is and how set up the script so that it runs every 10 minutes.
 - [x] Once the correct functioning of the script has been verified, the student being evaluated should ensure that this script runs **every minute**.
