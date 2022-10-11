@@ -97,7 +97,6 @@ sudo service lighttpd force-reload
 
 ## Check Service
 Go to ip adress in a web browser (on host mac): 
-<img  width="800" src="https://github.com/ikersojo/02_born2beroot/blob/main/img/wp4.png\?raw\=true">
 <img  width="800" src="https://github.com/ikersojo/02_born2beroot/blob/main/img/wp5.png\?raw\=true">
 <img  width="800" src="https://github.com/ikersojo/02_born2beroot/blob/main/img/wp6.png\?raw\=true">
 
