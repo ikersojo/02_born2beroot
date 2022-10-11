@@ -51,6 +51,8 @@ mariadb -u nombre_usuario -p
 SHOW DATABASES;
 exit
 ```
+<img  width="800" src="https://github.com/ikersojo/02_born2beroot/blob/main/img/wp2.png\?raw\=true">
+
 ## Install and configure PHP
 ```console
 sudo apt install php-cgi php-mysql
@@ -74,6 +76,8 @@ Replace:
 - define( 'DB_PASSWORD', 'born2beROOT' );
 - define( 'DB_HOST', 'localhost' );
 
+<img  width="800" src="https://github.com/ikersojo/02_born2beroot/blob/main/img/wp3.png\?raw\=true">
+
 Change the permissions for the WordPress directories for the www-data user (our web server) and restart lighttpd:
 ```console
 sudo chown -R www-data:www-data /var/www/html/
@@ -93,6 +97,9 @@ sudo service lighttpd force-reload
 
 ## Check Service
 Go to ip adress in a web browser (on host mac): 
+<img  width="800" src="https://github.com/ikersojo/02_born2beroot/blob/main/img/wp4.png\?raw\=true">
+<img  width="800" src="https://github.com/ikersojo/02_born2beroot/blob/main/img/wp5.png\?raw\=true">
+<img  width="800" src="https://github.com/ikersojo/02_born2beroot/blob/main/img/wp6.png\?raw\=true">
 
 # Setup File Transfer Protocol (FTP)
 ## Install FTP
