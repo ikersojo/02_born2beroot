@@ -64,7 +64,7 @@ groups isojo-go
 
 - [x] Create a new user & assign it a password of your choice, respecting the subject rules.
 ```console
-sudo useradd **testuser**
+sudo useradd testuser
 ```
 <img  width="800" src="https://github.com/ikersojo/02_born2beroot/blob/main/img/def9.png\?raw\=true">
 
@@ -75,7 +75,7 @@ sudo useradd **testuser**
 
 - [x] Create a group named "evaluating".
 ```console
-sudo groupadd **testgroup**
+sudo groupadd testgroup
 ```
 <img  width="800" src="https://github.com/ikersojo/02_born2beroot/blob/main/img/def10.png\?raw\=true">
 
@@ -156,9 +156,10 @@ sudo ufw delete 4
 - [x] Ask what Verify that the SSH service only uses port 4242.
 - [x] Use SSH in order to log in with the newly created user.
 - [x] Make sure that you cannot use SSH with the "root" user as stated in the subject.
+<img  width="800" src="https://github.com/ikersojo/02_born2beroot/blob/main/img/def18.png\?raw\=true">
 
 ## Script monitoring
-<img  width="800" src="https://github.com/ikersojo/02_born2beroot/blob/main/img/def18.png\?raw\=true">
+<img  width="800" src="https://github.com/ikersojo/02_born2beroot/blob/main/img/def19.png\?raw\=true">
 - [x] How their script works by showing you the code.
 - [x] What "cron" is and how set up the script so that it runs every 10 minutes.
 - [x] Once the correct functioning of the script has been verified, the student being evaluated should ensure that this script runs **every minute**.
