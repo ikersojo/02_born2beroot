@@ -95,7 +95,7 @@ hostname
 sudo hostnamectl set-hostname testuser
 ```
 - [x] Compare partitions for the virtual machine. Note: if thestudent evaluated makes the bonuses, it will be necessary to refer to the bonus example.
-- [ ] ```console
+```console
 lsblk
 ```
 <img  width="800" src="https://github.com/ikersojo/02_born2beroot/blob/main/img/def12.png\?raw\=true">
@@ -104,7 +104,7 @@ lsblk
 
 ## SUDO
 - [x] Check that the "sudo" program is properly installed on the virtual machine.
-- [ ] ```console
+```console
 dpkg -s sudo
 ```
 - [x] The student being evaluated should now show assigning your new user to the "sudo" group.
@@ -160,6 +160,7 @@ sudo ufw delete 4
 
 ## Script monitoring
 <img  width="800" src="https://github.com/ikersojo/02_born2beroot/blob/main/img/def19.png\?raw\=true">
+
 - [x] How their script works by showing you the code.
 - [x] What "cron" is and how set up the script so that it runs every 10 minutes.
 - [x] Once the correct functioning of the script has been verified, the student being evaluated should ensure that this script runs **every minute**.
