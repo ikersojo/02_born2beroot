@@ -102,4 +102,6 @@ Therfore:
 */10 * * * * bash /root/monitoring.sh | wall
 ```
 
+<img  width="800" src="https://github.com/ikersojo/02_born2beroot/blob/main/img/cron.png\?raw\=true">
+
 wall is added to print in all terminal sessions.
