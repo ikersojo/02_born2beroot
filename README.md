@@ -1,6 +1,6 @@
 # Born2beroot - Virtual Machine creation
 ## Scope of the Project
-The aim of the project is to create a Linux Server in a Virtual Machine, including services, user/group management and autmated routines.
+The aim of the project is to create a Linux Server in a Virtual Machine, including services, user/group management and automated routines.
 
 ## Table of Content
 |   |               STEPS               |
@@ -11,12 +11,8 @@ The aim of the project is to create a Linux Server in a Virtual Machine, includi
 |   04  | [configure_Debian_system](https://github.com/ikersojo/02_born2beroot/blob/main/04_configure_Debian_system.md) |
 |   05  | [monitoring_script](https://github.com/ikersojo/02_born2beroot/blob/main/05_monitoring_script.md) |
 |   06  | [bonus](https://github.com/ikersojo/02_born2beroot/blob/main/06_bonus.md) |
+|   07  | [defense](https://github.com/ikersojo/02_born2beroot/blob/main/07_Defense.md)|
 
 
 ## Score
-Pending evaluation...
-
-## DEFENSE
-pass encryption : passWORD1234
-pass root : passWORD1234
-pass user: born2beROOT
+<img  width="300" src="https://github.com/ikersojo/02_born2beroot/blob/main/img/score.png\?raw\=true">
