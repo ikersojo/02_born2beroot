@@ -15,4 +15,4 @@ The aim of the project is to create a Linux Server in a Virtual Machine, includi
 
 
 ## Score
-<img  width="300" src="https://github.com/ikersojo/02_born2beroot/blob/main/img/score.png\?raw\=true">
+<img  width="300" src="https://github.com/ikersojo/02_born2beroot/blob/main/score.png\?raw\=true">
